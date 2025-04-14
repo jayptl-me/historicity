@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, History, BookOpen, Info } from 'lucide-react';
@@ -19,8 +18,8 @@ const Navbar: React.FC = () => {
 
   return (
     <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-background/80 backdrop-blur-md shadow-sm' : 'bg-transparent'
+      className={`fixed top-6 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 rounded-xl shadow-lg bg-background/90 border border-border max-w-3xl w-[95vw] backdrop-blur-md ${
+        isScrolled ? '' : 'bg-transparent shadow-none border-transparent'
       }`}
     >
       <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8">

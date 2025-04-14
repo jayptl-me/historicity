@@ -1,0 +1,28 @@
+{
+    "name": "historicity-backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "tsc && node dist/index.js",
+        "dev": "ts-node-dev --respawn index.ts",
+        "build": "tsc"
+    },
+    "dependencies": {
+        "@hono/node-server": "^1.14.1",
+        "@hono/zod-validator": "^0.1.11",
+        "@pinecone-database/pinecone": "^1.1.2",
+        "axios": "^1.6.2",
+        "dotenv": "^16.0.0",
+        "express": "^4.18.0",
+        "groq-sdk": "^0.3.1",
+        "hono": "^4.7.6",
+        "hono-rate-limiter": "^0.4.2",
+        "zod": "^3.22.4"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.0",
+        "@types/node": "^18.0.0",
+        "ts-node-dev": "^2.0.0",
+        "typescript": "^5.0.0"
+    }
+}
