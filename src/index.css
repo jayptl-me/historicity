@@ -1,0 +1,157 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+@layer base {
+  :root {
+    /* Historical color palette - Light mode */
+    --background: 40 38% 97%;
+    --foreground: 221 39% 22%;
+
+    --card: 43 30% 98%;
+    --card-foreground: 221 39% 22%;
+
+    --popover: 43 30% 98%;
+    --popover-foreground: 221 39% 22%;
+
+    --primary: 221 39% 22%;
+    --primary-foreground: 40 38% 97%;
+
+    --secondary: 36 26% 95%;
+    --secondary-foreground: 221 39% 22%;
+
+    --muted: 36 26% 95%;
+    --muted-foreground: 224 18% 48%;
+
+    --accent: 28 54% 86%;
+    --accent-foreground: 28 87% 29%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 36 20% 88%;
+    --input: 36 20% 88%;
+    --ring: 28 54% 60%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Historical color palette - Dark mode */
+    --background: 222 18% 12%;
+    --foreground: 36 26% 90%;
+
+    --card: 222 22% 16%;
+    --card-foreground: 36 26% 90%;
+
+    --popover: 222 22% 16%;
+    --popover-foreground: 36 26% 90%;
+
+    --primary: 36 30% 80%;
+    --primary-foreground: 222 18% 12%;
+
+    --secondary: 222 14% 22%;
+    --secondary-foreground: 36 26% 90%;
+
+    --muted: 222 14% 22%;
+    --muted-foreground: 36 10% 70%;
+
+    --accent: 36 40% 30%;
+    --accent-foreground: 36 26% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 223 14% 30%;
+    --input: 223 14% 30%;
+    --ring: 36 40% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-image: url("/old-paper-texture.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-blend-mode: overlay;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-playfair;
+  }
+  
+  p, span, div, a, button {
+    @apply font-source;
+  }
+}
+
+@layer components {
+  .historical-divider {
+    @apply relative my-8 h-px w-full bg-amber-200/50 overflow-visible;
+  }
+  
+  .historical-divider::before {
+    content: "✦";
+    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-background px-4 text-amber-600;
+  }
+  
+  .parchment {
+    @apply bg-[#f8f3e6] border border-amber-200 shadow-md;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4a76a' fill-opacity='0.06' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .quill-separator {
+    @apply relative flex items-center;
+  }
+  
+  .quill-separator::before,
+  .quill-separator::after {
+    content: "";
+    @apply flex-1 border-t border-amber-300/30;
+  }
+  
+  .quill-separator::before {
+    @apply mr-4;
+  }
+  
+  .quill-separator::after {
+    @apply ml-4;
+  }
+  
+  .history-card {
+    @apply bg-card/90 backdrop-blur-sm border border-amber-200/30 shadow-sm hover:shadow-md transition-all rounded-lg overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .font-playfair {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .font-source {
+    font-family: 'Source Sans 3', system-ui, -apple-system, sans-serif;
+  }
+  
+  .text-gradient-gold {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-amber-700 via-yellow-600 to-amber-700;
+  }
+  
+  .timeline-dot {
+    @apply absolute w-4 h-4 bg-amber-500 rounded-full border-4 border-background z-10;
+  }
+  
+  .timeline-line {
+    @apply absolute w-0.5 h-full bg-amber-200/60 left-1/2 transform -translate-x-1/2 z-0;
+  }
+}
